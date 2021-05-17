@@ -1,12 +1,9 @@
 package Delfin;
 
 public class HovedMenuController {
-
+  private Menu menu = new Menu();
   public void kør(){
-
-
-    FormandController formandController = new FormandController();
-    formandController.opretMedlem();
+    menu.switchCaseMenu();
   }
 
 }

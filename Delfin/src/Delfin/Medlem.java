@@ -7,17 +7,11 @@ public class Medlem {
   private boolean juniorSvømmer;
   private boolean seniorSvømmer;
   private boolean betalt;
+  private double kontingent;
 
-  public void betaling() {
+  public void betaling() { //spørg Tine om den stadigvæk skal bruges.
 
   }
-  /*public Medlem(String fuldeNavn, int alder, boolean aktivitetsForm, boolean juniorSvømmer, boolean seniorSvømmer, boolean betalt){
-    this.fuldeNavn = fuldeNavn;
-    this.alder = alder;
-    this.aktivitetsForm = aktivitetsForm;
-    this.juniorSvømmer = juniorSvømmer;
-    this.seniorSvømmer = seniorSvømmer;
-    this.betalt = betalt; */
 
   public void setFuldeNavn(String fuldeNavn) {
     this.fuldeNavn = fuldeNavn;
@@ -67,6 +61,14 @@ public class Medlem {
     return betalt;
   }
 
+  public void setKontingent(double kontingent){
+    this.kontingent = kontingent;
+  }
+
+  public double getKontingent(){
+    return kontingent;
+  }
+
   @Override
   public String toString() {
     return "Medlem{" +
@@ -76,6 +78,7 @@ public class Medlem {
             ", juniorSvømmer=" + juniorSvømmer +
             ", seniorSvømmer=" + seniorSvømmer +
             ", betalt=" + betalt +
+            ", kontingent=" + kontingent +
             '}';
   }
 }
