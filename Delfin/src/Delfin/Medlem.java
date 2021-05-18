@@ -1,5 +1,7 @@
 package Delfin;
 
+import java.util.Scanner;
+
 public class Medlem {
   private String fuldeNavn;
   private int alder;
@@ -9,8 +11,18 @@ public class Medlem {
   private boolean betalt;
   private double kontingent;
 
-  public void betaling() { //spørg Tine om den stadigvæk skal bruges.
+  //Lav fejlhåndtering på nedenstående metode
+  public void betaltRestance() {    //Medlem betaler sin restance og bliver rykket til medlemmer-listen i FormandController-klassen.
+    Scanner scanner = new Scanner(System.in);
+    KassererController kassererController = new KassererController();
 
+    String navn = scanner.nextLine();
+    for (int i = 0; i < kassererController.getListeOverRestanceMedlemmer().size(); i++) {
+      if (navn == kassererController.getListeOverRestanceMedlemmer().get(i).getFuldeNavn()) {
+        kassererController.getListeOverRestanceMedlemmer().remove(i);   //Fjerner medlemmet fra restance-listen.
+        kassererController.kontingentBetaling(kassererController.getListeOverRestanceMedlemmer().get(i));    //Kalder kontingentBetaling-metoden.
+      }
+    }
   }
 
   public void setFuldeNavn(String fuldeNavn) {

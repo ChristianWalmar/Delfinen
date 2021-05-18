@@ -9,7 +9,6 @@ public class KonkurrenceSvømmer extends Medlem{
   private int placering;
   private double tid;
 
-
   public void konkurrenceResultat(){
 
   }

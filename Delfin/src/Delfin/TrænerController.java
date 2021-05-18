@@ -5,5 +5,4 @@ public class TrænerController {
   public void topFem(){
 
   }
-
 }
