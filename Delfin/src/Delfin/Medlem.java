@@ -12,7 +12,7 @@ public class Medlem {
   private double kontingent;
 
   //Lav fejlhåndtering på nedenstående metode
-  public void betaltRestance() {    //Medlem betaler sin restance og bliver rykket til medlemmer-listen i FormandController-klassen.
+  /*public void betaltRestance() {    //Medlem betaler sin restance og bliver rykket til medlemmer-listen i FormandController-klassen.
     Scanner scanner = new Scanner(System.in);
     KassererController kassererController = new KassererController();
 
@@ -23,7 +23,7 @@ public class Medlem {
         kassererController.kontingentBetaling(kassererController.getListeOverRestanceMedlemmer().get(i));    //Kalder kontingentBetaling-metoden.
       }
     }
-  }
+  }*/
 
   public void setFuldeNavn(String fuldeNavn) {
     this.fuldeNavn = fuldeNavn;

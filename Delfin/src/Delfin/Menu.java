@@ -1,13 +1,15 @@
 package Delfin;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Menu {
-  public void switchCaseMenu() {
+  public void switchCaseMenu() throws FileNotFoundException {
     Scanner scanner = new Scanner(System.in);
     FormandController formandController = new FormandController();
     KassererController kassererController = new KassererController();
     Medlem medlem = new Medlem();
+    FilHåndtering filHåndtering = new FilHåndtering();
 
     while (true) {
       System.out.println("1. Tilføj nyt medlem til svømmeklubben");
@@ -25,10 +27,10 @@ public class Menu {
           formandController.sletMedlem();
           break;
         case 3:
-          formandController.visMedlemmer();
+          filHåndtering.visMedlemmer();
           break;
         case 4:
-          kassererController.visRestanceMedlemmer();
+          // filHåndtering.visRestanceMedlemmer();
           break;
         case 5:
           //medlem.betaltRestance();
