@@ -1,0 +1,2 @@
+
+Medlem{fuldeNavn='Jens', alder=15, aktivitetsForm=false, juniorSvømmer=false, seniorSvømmer=false, betalt=false, kontingent=0.0}

@@ -11,6 +11,7 @@ public class Medlem {
   private boolean betalt;
   private double kontingent;
 
+
   //Lav fejlhåndtering på nedenstående metode
   /*public void betaltRestance() {    //Medlem betaler sin restance og bliver rykket til medlemmer-listen i FormandController-klassen.
     Scanner scanner = new Scanner(System.in);
