@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class KassererController {
     private double kontingentSum;
-
+    private ArrayList<Medlem> restanceMedlemmer = new ArrayList<>();
 
     public void kontingentBetaling(Medlem medlem) {
         double kontingent = 0;
@@ -24,14 +24,16 @@ public class KassererController {
                 kontingent = 500; //passivt medlem.
             }
         }
-        kontingentSum += kontingent;
-        System.out.println("Medlemmets kontigent årligt er på: " + kontingent + ",-");
+        restanceMedlemmer.add(medlem);  //Restance medlem.
 
+        kontingentSum += kontingent;
+        System.out.println("\nMedlemmets årlige kontingent er på: " + kontingent + ",-");
         medlem.setKontingent(kontingent);
     }
 
     public void visRestanceMedlemmer() { //kaldes i switch case.
-        //for (int i = 0; i < listeOverRestanceMedlemmer.size(); i++) {
-          //  System.out.println(listeOverRestanceMedlemmer.get(i));
+        for (int i = 0; i < restanceMedlemmer.size(); i++) {
+            System.out.println(restanceMedlemmer.get(i));
         }
     }
+}

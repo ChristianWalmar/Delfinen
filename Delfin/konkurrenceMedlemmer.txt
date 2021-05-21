@@ -1,2 +1,0 @@
-
-Medlem{fuldeNavn='Christian', alder=26, aktivitetsForm=true, juniorSvømmer=false, seniorSvømmer=false, betalt=true, kontingent=1600.0}

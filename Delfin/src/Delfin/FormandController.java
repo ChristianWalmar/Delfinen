@@ -10,55 +10,44 @@ public class FormandController {
 
   public void opretMedlem() { //kaldes i switch case.
     Scanner scan = new Scanner(System.in);
-    Motionist motionist = new Motionist();
-    KonkurrenceSvømmer konkurrenceSvømmer = new KonkurrenceSvømmer();
+    Motionist motionist;
+    KonkurrenceSvømmer konkurrenceSvømmer;
 
-    System.out.println("Opret nyt medlem");
-    System.out.println("Er medlemmet konkurrencesvømmer 'ja' eller 'nej'");
-
+    System.out.println("Opret det nye medlem herunder: ");
+    System.out.print("Skal det nye medlem registreres som konkurrencesvømmer, 'ja' eller 'nej': ");
     String svømmeType = scan.nextLine();
-    //fælles variable til input i constructor.
+
+    System.out.print("Fulde navn: ");
+    String navn = scan.nextLine();
+    System.out.print("Alder: ");
+    int alder = scan.nextInt();
+    System.out.print("Har medlemmet en aktiv aktivitetsform? (true eller false): ");
+    boolean aktivitetsform = scan.nextBoolean();
+    System.out.print("Har medlemmet betalt? (true eller false): ");
+    boolean betalt = scan.nextBoolean();
 
     if (svømmeType.equals("nej")) { // motionist.
-      //Lave en constructer til at lave objecterne med de fælles variable.
-      System.out.print("Fulde navn: ");
-      motionist.setFuldeNavn(scan.nextLine());
-      System.out.print("Alder: ");
-      motionist.setAlder(scan.nextInt());
+      motionist = new Motionist(navn, alder, aktivitetsform, betalt);
       if (motionist.getAlder() < 18) {
-        System.out.println("Du er juniormedlem.");
-
+        System.out.println("Medlemmet er motionist og i kategorien juniormedlem.");
       } else if (motionist.getAlder() >= 18) {
-        System.out.println("Du er seniormedlem.");
+        System.out.println("Medlemmet er motionist og i kategorien seniormedlem.");
       }
-      System.out.print("Aktivitetsform (true eller false): ");
-      motionist.setAktivitetsForm(scan.nextBoolean());
-      System.out.print("Betalt (true eller false): ");
-      motionist.setBetalt(scan.nextBoolean());
+      System.out.println();
       System.out.print(motionist.toString());
-
       medlemmer.add(motionist);
       kassererController.kontingentBetaling(motionist);
       filHåndtering.filSkrivning(motionist);
 
     } else if (svømmeType.equals("ja")) { //konkurrencesvømmer
-
-      System.out.print("Fulde navn: ");
-      konkurrenceSvømmer.setFuldeNavn(scan.nextLine());
-      System.out.print("Alder: ");
-      konkurrenceSvømmer.setAlder(scan.nextInt());
+      konkurrenceSvømmer = new KonkurrenceSvømmer(navn, alder, aktivitetsform, betalt);
       if (konkurrenceSvømmer.getAlder() < 18) {
-        System.out.println("Du er juniormedlem og dermed tildelt ungdomsholdet.");
+        System.out.println("Medlemmet er konkurrencesvømmer i kategorien juniormedlem, og dermed tildelt ungdomsholdet.");
       } else if (konkurrenceSvømmer.getAlder() >= 18) {
-        System.out.println("Du er seniormedlem og dermed tildelt seniorholdet.");
+        System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
       }
-
-      System.out.print("Aktivitetsform (true eller false): ");
-      konkurrenceSvømmer.setAktivitetsForm(scan.nextBoolean());
-      System.out.print("Betalt (true eller false): ");
-      konkurrenceSvømmer.setBetalt(scan.nextBoolean());
+      System.out.println();
       System.out.print(konkurrenceSvømmer.toString());
-
       medlemmer.add(konkurrenceSvømmer);
       kassererController.kontingentBetaling(konkurrenceSvømmer);
       filHåndtering.filSkrivning(konkurrenceSvømmer);
@@ -71,10 +60,16 @@ public class FormandController {
     String sletNavn = scan.nextLine();
 
     for (int i = 0; i < medlemmer.size(); i++) {
-      if (sletNavn == medlemmer.get(i).getFuldeNavn()) ;
+      if (sletNavn.equals(medlemmer.get(i).getFuldeNavn()));
       medlemmer.remove(i);
     }
-    System.out.println(sletNavn + " er blevet slettet fra listen.");
+    System.out.println(sletNavn + " er blevet slettet fra medlemmerlisten.");
+  }
+
+  public void visMedlemmerFraArrayListe() {
+    for (int i = 0; i < medlemmer.size(); i++) {
+      System.out.println(medlemmer.get(i));
+    }
   }
 
   public ArrayList<Medlem> getMedlemmer() {

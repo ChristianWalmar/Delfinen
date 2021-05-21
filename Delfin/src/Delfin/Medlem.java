@@ -11,8 +11,8 @@ public class Medlem {
   private boolean betalt;
   private double kontingent;
 
-
   //Lav fejlhåndtering på nedenstående metode
+  //Lav arrayliste til restancemedlemmer, så vi kan vise en oversigt over dem der er i restance
   /*public void betaltRestance() {    //Medlem betaler sin restance og bliver rykket til medlemmer-listen i FormandController-klassen.
     Scanner scanner = new Scanner(System.in);
     KassererController kassererController = new KassererController();
@@ -25,6 +25,13 @@ public class Medlem {
       }
     }
   }*/
+
+  public Medlem(String fuldeNavn, int alder, boolean aktivitetsForm, boolean betalt) {
+    this.fuldeNavn = fuldeNavn;
+    this.alder = alder;
+    this.aktivitetsForm = aktivitetsForm;
+    this.betalt = betalt;
+  }
 
   public void setFuldeNavn(String fuldeNavn) {
     this.fuldeNavn = fuldeNavn;
@@ -84,14 +91,10 @@ public class Medlem {
 
   @Override
   public String toString() {
-    return "Medlem{" +
-            "fuldeNavn='" + fuldeNavn + '\'' +
-            ", alder=" + alder +
-            ", aktivitetsForm=" + aktivitetsForm +
-            ", juniorSvømmer=" + juniorSvømmer +
-            ", seniorSvømmer=" + seniorSvømmer +
-            ", betalt=" + betalt +
-            ", kontingent=" + kontingent +
-            '}';
+    return "---- Medlemsoplysninger ----\n" +
+            "Fulde navn: " + fuldeNavn +
+            "\nAlder: " + alder +
+            "\nAktivitetsform: " + aktivitetsForm +
+            "\nHar medlemmet betalt? " + betalt + "\n";
   }
 }

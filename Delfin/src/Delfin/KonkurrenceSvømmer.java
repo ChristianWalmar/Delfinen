@@ -13,6 +13,9 @@ public class KonkurrenceSvømmer extends Medlem{
   private Træner træner;
   private ArrayList<Medlem> medlemmer1 = new ArrayList<>();
 
+  public KonkurrenceSvømmer(String navn, int alder, boolean aktivitetsform, boolean betalt) {
+    super(navn, alder, aktivitetsform, betalt);
+  }
 
   public void svømmeDisciplin(Medlem medlem){
     Scanner scanner = new Scanner(System.in);
@@ -32,6 +35,10 @@ public class KonkurrenceSvømmer extends Medlem{
       case BUTTERFLY -> medlemmer1.add(medlem);
       //case CRAWL -> medlemmer1.add()
     }
+  }
+
+  public void konkurrenceResultat() {
+
   }
 }
 
