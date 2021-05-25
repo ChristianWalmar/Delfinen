@@ -9,6 +9,7 @@ public class Menu {
     Scanner scanner = new Scanner(System.in);
     FormandController formandController = new FormandController();
     KassererController kassererController = new KassererController();
+    Hold hold = new Hold();
     Medlem medlem;
     FilHåndtering filHåndtering = new FilHåndtering();
 
@@ -22,12 +23,13 @@ public class Menu {
       System.out.println("4. Vis alle medlemmer af svømmeklubben fra fil");
       System.out.println("5. Vis medlemmer i restance");
       System.out.println("6. Fjern medlem fra restance-listen");
+      System.out.println("7. Vis årlige kontingent i alt for alle medlemmer");
       System.out.println("----------------------------------------------------------");
       System.out.print("Dit valg: ");
       int valg = scanner.nextInt();
       switch (valg) {
         case 1:
-          formandController.opretMedlem();
+          formandController.opretMedlem(kassererController,hold);
           break;
         case 2:
           formandController.sletMedlem();
@@ -39,11 +41,13 @@ public class Menu {
           filHåndtering.visMedlemmerFraFil();
           break;
         case 5:
-          kassererController.visRestanceMedlemmer();
+          kassererController.visRestanceMedlemmer(formandController);
           break;
         case 6:
-          //medlem.betaltRestance();
+          kassererController.betaltRestance();
           break;
+        case 7:
+          System.out.println("Kasseren kan forvente at få indbetalt " + kassererController.getKontingentSum() + "kr. kontingent i alt");
       }
     }
   }

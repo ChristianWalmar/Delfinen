@@ -11,20 +11,7 @@ public class Medlem {
   private boolean betalt;
   private double kontingent;
 
-  //Lav fejlhåndtering på nedenstående metode
-  //Lav arrayliste til restancemedlemmer, så vi kan vise en oversigt over dem der er i restance
-  /*public void betaltRestance() {    //Medlem betaler sin restance og bliver rykket til medlemmer-listen i FormandController-klassen.
-    Scanner scanner = new Scanner(System.in);
-    KassererController kassererController = new KassererController();
 
-    String navn = scanner.nextLine();
-    for (int i = 0; i < kassererController.getListeOverRestanceMedlemmer().size(); i++) {
-      if (navn == kassererController.getListeOverRestanceMedlemmer().get(i).getFuldeNavn()) {
-        kassererController.getListeOverRestanceMedlemmer().remove(i);   //Fjerner medlemmet fra restance-listen.
-        kassererController.kontingentBetaling(kassererController.getListeOverRestanceMedlemmer().get(i));    //Kalder kontingentBetaling-metoden.
-      }
-    }
-  }*/
 
   public Medlem(String fuldeNavn, int alder, boolean aktivitetsForm, boolean betalt) {
     this.fuldeNavn = fuldeNavn;
@@ -91,9 +78,18 @@ public class Medlem {
 
   @Override
   public String toString() {
+    String medlemsType ="";
+
+    if (alder < 18) {
+      medlemsType = "juniormedlem";
+    } else if (alder >= 18)
+      medlemsType = "seniormedlem";
+
+
     return "---- Medlemsoplysninger ----\n" +
             "Fulde navn: " + fuldeNavn +
             "\nAlder: " + alder +
+            "\nMedlemstype: " + medlemsType +
             "\nAktivitetsform: " + aktivitetsForm +
             "\nHar medlemmet betalt? " + betalt + "\n";
   }

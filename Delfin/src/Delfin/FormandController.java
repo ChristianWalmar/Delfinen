@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class FormandController {
   private ArrayList<Medlem> medlemmer = new ArrayList<>();
-  private KassererController kassererController = new KassererController();
+  //private KassererController kassererController = new KassererController();
   private FilHåndtering filHåndtering = new FilHåndtering();
 
-  public void opretMedlem() { //kaldes i switch case.
+
+  public void opretMedlem(KassererController kassererController, Hold hold) { //kaldes i switch case.
     Scanner scan = new Scanner(System.in);
     Motionist motionist;
     KonkurrenceSvømmer konkurrenceSvømmer;
@@ -42,10 +43,14 @@ public class FormandController {
     } else if (svømmeType.equals("ja")) { //konkurrencesvømmer
       konkurrenceSvømmer = new KonkurrenceSvømmer(navn, alder, aktivitetsform, betalt);
       if (konkurrenceSvømmer.getAlder() < 18) {
+        hold.tilføjJuniorKonkurrencesvømmere(konkurrenceSvømmer);
         System.out.println("Medlemmet er konkurrencesvømmer i kategorien juniormedlem, og dermed tildelt ungdomsholdet.");
       } else if (konkurrenceSvømmer.getAlder() >= 18) {
+        hold.tilføjSeniorKonkurrencesvømmere(konkurrenceSvømmer);
         System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
       }
+      konkurrenceSvømmer.svømmeDisciplin(konkurrenceSvømmer);
+
       System.out.println();
       System.out.print(konkurrenceSvømmer.toString());
       medlemmer.add(konkurrenceSvømmer);
