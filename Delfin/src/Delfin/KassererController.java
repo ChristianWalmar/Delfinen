@@ -29,8 +29,6 @@ public class KassererController {
             restanceMedlemmer.add(medlem);
         }
 
-
-
         kontingentSum = kontingentSum + kontingent;
         System.out.println("\nMedlemmets årlige kontingent er på: " + kontingent + ",-");
         medlem.setKontingent(kontingent);

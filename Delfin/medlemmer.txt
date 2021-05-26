@@ -133,3 +133,105 @@ Alder: 34
 Aktivitetsform: true
 Har medlemmet betalt? true
 
+
+
+Træningstid: 0.0
+
+
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0, Dato for trænindstid: null
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0, Dato for træningstid: null
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Emma
+Alder: 25
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Emma
+Alder: 25
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Emma
+Alder: 25
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Christian
+Alder: 26
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
+
+---- Medlemsoplysninger ----
+Fulde navn: Emma
+Alder: 25
+Medlemstype: seniormedlem
+Aktivitetsform: true
+Har medlemmet betalt? true
+Træningstid: 0.0
