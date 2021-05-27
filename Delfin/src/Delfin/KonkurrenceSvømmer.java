@@ -1,18 +1,9 @@
 package Delfin;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class KonkurrenceSvømmer extends Medlem{
-
   private double træningsResultat;
-  private LocalDateTime dato;
-  private String stævne;
-  private int placering;
-  private double tid;
-  private Træner træner;
   private SvømmeDiscipliner svømmeDiscipliner;
 
   public KonkurrenceSvømmer(String navn, int alder, boolean aktivitetsform, boolean betalt) {
@@ -33,51 +24,10 @@ public class KonkurrenceSvømmer extends Medlem{
       konkurrenceSvømmer.setSvømmeDiscipliner(SvømmeDiscipliner.BRYSTSVØMNING);
     }
     System.out.println("Valgte svømmedisciplin: " + konkurrenceSvømmer.getSvømmeDiscipliner());
-
-  }
-
-  public void konkurrenceResultat() {
-
-  }
-
-  public double getTræningsResultat() {
-    return træningsResultat;
   }
 
   public void setTræningsResultat(double træningsResultat) {
     this.træningsResultat = træningsResultat;
-  }
-
-  public String getStævne() {
-    return stævne;
-  }
-
-  public void setStævne(String stævne) {
-    this.stævne = stævne;
-  }
-
-  public int getPlacering() {
-    return placering;
-  }
-
-  public void setPlacering(int placering) {
-    this.placering = placering;
-  }
-
-  public double getTid() {
-    return tid;
-  }
-
-  public void setTid(double tid) {
-    this.tid = tid;
-  }
-
-  public Træner getTræner() {
-    return træner;
-  }
-
-  public void setTræner(Træner træner) {
-    this.træner = træner;
   }
 
   public SvømmeDiscipliner getSvømmeDiscipliner() {
@@ -104,7 +54,6 @@ public class KonkurrenceSvømmer extends Medlem{
         "\nHar medlemmet betalt? " + isBetalt() +
         "\nTræningstid: " + træningsResultat;
   }
-
 }
 
 

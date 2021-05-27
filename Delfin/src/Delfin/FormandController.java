@@ -5,15 +5,14 @@ import java.util.Scanner;
 
 public class FormandController {
   private ArrayList<Medlem> medlemmer = new ArrayList<>();
-  //private KassererController kassererController = new KassererController();
   private FilHåndtering filHåndtering = new FilHåndtering();
-
 
   public void opretMedlem(KassererController kassererController, Hold hold) { //kaldes i switch case.
     Scanner scan = new Scanner(System.in);
     Motionist motionist;
     KonkurrenceSvømmer konkurrenceSvømmer;
 
+    //Alle medlemmer
     System.out.println("Opret det nye medlem herunder: ");
     System.out.print("Skal det nye medlem registreres som konkurrencesvømmer, 'ja' eller 'nej': ");
     String svømmeType = scan.nextLine();
@@ -27,7 +26,8 @@ public class FormandController {
     System.out.print("Har medlemmet betalt? (true eller false): ");
     boolean betalt = scan.nextBoolean();
 
-    if (svømmeType.equals("nej")) { // motionist.
+    //Motionist
+    if (svømmeType.equals("nej")) {
       motionist = new Motionist(navn, alder, aktivitetsform, betalt);
       if (motionist.getAlder() < 18) {
         System.out.println("Medlemmet er motionist og i kategorien juniormedlem.");
@@ -40,7 +40,8 @@ public class FormandController {
       kassererController.kontingentBetaling(motionist);
       filHåndtering.filSkrivning(motionist);
 
-    } else if (svømmeType.equals("ja")) { //konkurrencesvømmer
+      //Konkurrencesvømmer
+    } else if (svømmeType.equals("ja")) {
       konkurrenceSvømmer = new KonkurrenceSvømmer(navn, alder, aktivitetsform, betalt);
       if (konkurrenceSvømmer.getAlder() < 18) {
         hold.tilføjJuniorKonkurrencesvømmere(konkurrenceSvømmer);
@@ -50,7 +51,6 @@ public class FormandController {
         System.out.println("Medlemmet er konkurrencesvømmer i kategorien seniormedlem, og dermed tildelt seniorholdet.");
       }
       konkurrenceSvømmer.svømmeDisciplin(konkurrenceSvømmer);
-
       System.out.println();
       System.out.print(konkurrenceSvømmer.toString());
       medlemmer.add(konkurrenceSvømmer);
@@ -65,7 +65,7 @@ public class FormandController {
     String sletNavn = scan.nextLine();
 
     for (int i = 0; i < medlemmer.size(); i++) {
-      if (sletNavn.equals(medlemmer.get(i).getFuldeNavn()));
+      if (sletNavn.equals(medlemmer.get(i).getFuldeNavn())) ;
       medlemmer.remove(i);
     }
     System.out.println(sletNavn + " er blevet slettet fra medlemmerlisten.");
@@ -75,13 +75,5 @@ public class FormandController {
     for (int i = 0; i < medlemmer.size(); i++) {
       System.out.println(medlemmer.get(i));
     }
-  }
-
-  public ArrayList<Medlem> getMedlemmer() {
-    return medlemmer;
-  }
-
-  public void setMedlemmer(Medlem medlem) {
-    medlemmer.add(medlem);
   }
 }
